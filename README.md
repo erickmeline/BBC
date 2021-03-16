@@ -1,7 +1,7 @@
 # BBC
 Berkeley Boot Camp Working Directory
 
-Homework-1
+# Homework-1
 
 Requirements:
 
@@ -32,4 +32,5 @@ I know that 10 commits was requested for this, but I can't imagine how to get th
 
 p.s. This line from the assignment page is misleading:
 *"To impress clients, you should always go the extra mile and improve their codebase for long term sustainability."*
+
 Not true. A developer should never stray from the spec'd scope of work.
