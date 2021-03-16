@@ -24,9 +24,11 @@ WHEN I view the title element
 THEN I find a concise, descriptive title
 
 I had a question on this part of the acceptance criteria:
-WHEN I view the heading attributes
-THEN they fall in sequential order
-Which implies that the <h> elements were not decending properly in the original source, however they already were. If I'm missing the meaning of this requirement, please clarify the instructions.
+
+*WHEN I view the heading attributes
+THEN they fall in sequential order*
+
+This implies that the <h> elements were not decending properly in the original source, however they already were. If I'm missing the meaning of this requirement, please clarify the instructions.
 
 I know that 10 commits was requested for this, but I can't imagine how to get there. I think I had maybe 3.
 
