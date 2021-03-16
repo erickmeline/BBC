@@ -34,11 +34,11 @@ I had a question on this part of the acceptance criteria:
 *WHEN I view the heading attributes
 THEN they fall in sequential order*
 
-This implies that the <h> elements were not decending properly in the original source, however they already were. If I'm missing the meaning of this requirement, please clarify the instructions.
+That leads me to believe that the heading elements were not decending properly in the original source, however they already were. It says 'heading attributes' but I didn't see any attributes on the heading elements. Not sure what the ask is here. Please clarify.
 
-I know that 10 commits was requested for this, but I can't imagine how to get there. I think I had maybe 3.
+I know that 10 commits was requested for this, but I can't imagine how to get there. I think I had maybe 3. Got quite a few on the readme though ;)
 
 p.s. This line from the assignment page is misleading:
 *"To impress clients, you should always go the extra mile and improve their codebase for long term sustainability."*
 
-Not true. A developer should never stray from the spec'd scope of work.
+Not sure about that. A developer should never stray from the spec'd scope of work.
