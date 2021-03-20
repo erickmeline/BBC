@@ -3,8 +3,19 @@
   --teal: #91CBCD;
   --gray: #333640;
 }
-body {
+body, html {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+}
+h1 {
+    font-size: 300%;
+    font-weight: 500;
+    margin: 0;
+}
+h2 {
+    font-size: 200%;
+    font-weight: 600;
     margin: 0;
 }
 
@@ -19,8 +30,6 @@ header {
 header h1 {
     background-color: var(--teal);
     color: var(--gray);
-    font-size: 300%;
-    font-weight: 500;
     margin: .6% 0 1.1% 0;
     padding: 0 1% 0 5%;
 }
@@ -36,4 +45,20 @@ header nav a {
     margin-left: 5px;
     padding: 4px 7px;
     text-decoration: none;
+}
+
+/* hero */
+.hero {
+    background: url("../images/hero.png") center no-repeat;
+    background-size: cover;
+    height: 210px;
+    position: relative;
+}
+.hero h2 {border:1px solid green;
+    background-color: var(--teal);
+    bottom: 11%;
+    color: var(--gray);
+    padding: .4% .7%;
+    position: absolute;
+    right: 5%;
 }
