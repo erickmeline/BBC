@@ -1,22 +1,32 @@
 /* global */
+* {
+    box-sizing: border-box;
+}
 :root {
-  --teal: #91CBCD;
-  --gray: #333640;
+  --teal: #9ECACC;
+  --gray: #31343D;
+  --slate: #485873;
 }
 body, html {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 100%;
     margin: 0;
 }
-h1 {
-    font-size: 300%;
-    font-weight: 500;
+h1, h3 {
+    font-size: 275%;
+    font-weight: 700;
     margin: 0;
 }
 h2 {
-    font-size: 200%;
+    font-size: 190%;
     font-weight: 600;
     margin: 0;
+}
+img {
+    max-width: 100%;
+}
+.center {
+    text-align: center;
 }
 
 /* header */
@@ -31,17 +41,18 @@ header h1 {
     background-color: var(--teal);
     color: var(--gray);
     margin: .6% 0 1.1% 0;
-    padding: 0 1% 0 5%;
+    padding: 0 1% 0 4%;
+    white-space: nowrap;
 }
 header nav {
-    padding-right: 5%;
+    padding-right: 4%;
     white-space: nowrap;
 }
 header nav a {
-    border-bottom: 4px solid var(--teal);
+    border-bottom: 3px solid var(--teal);
     color: var(--teal);
     display: inline-block;
-    font-size: 125%;
+    font-size: 120%;
     margin-left: 5px;
     padding: 4px 7px;
     text-decoration: none;
@@ -51,14 +62,101 @@ header nav a {
 .hero {
     background: url("../images/hero.png") center no-repeat;
     background-size: cover;
-    height: 210px;
+    height: 175px;
     position: relative;
 }
-.hero h2 {border:1px solid green;
+.hero h2 {
     background-color: var(--teal);
     bottom: 11%;
     color: var(--gray);
     padding: .4% .7%;
     position: absolute;
-    right: 5%;
+    right: 4%;
+}
+
+/* main */
+main {
+    margin: 2% 5%;
+}
+main section {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 3%;
+}
+main section h3 {
+    border-right: 3px solid var(--slate);
+    color: var(--slate);
+    flex: 0 0 auto;
+    padding: 0 1% 0 4%;
+    text-align: right;
+    width: 225px;
+}
+.baseline-center  {
+    align-items: center;
+}
+main section .details {
+    color: var(--slate);
+    line-height: 140%;
+    padding-left: 2.5%;
+    width: 100%;
+}
+.details p {
+    font-size: 85%;
+    margin-top: 0;
+}
+.details ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.details li {
+    display: block;
+}
+.details li a {
+    border-bottom: 3px solid var(--slate);
+    color: var(--slate);
+    padding: 4px 7px;
+    text-decoration: none;
+}
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.examples figure {
+    background-color: var(--slate);
+    border: 4px solid var(--teal);
+    flex-basis: 49.25%;
+    height: 125px;
+    margin: 0 0 1.25% 0;
+    overflow: hidden;
+    position: relative;
+}
+.examples figure:nth-child(1) {
+    flex: 0 0 100%;
+    height: 335px;
+}
+.examples figcaption {
+    background-color: var(--teal);
+    bottom: 20px;
+    left: 0;
+    line-height: 170%;
+    padding: .75% 2.5%;
+    position: absolute;
+}
+figure img {
+    display: block;
+}
+figcaption strong {
+    color: var(--gray);
+    display: block;
+    font-size: 125%;
+    font-weight: 600;
+}
+figcaption small {
+    display: block;
+    font-size: 75%;
 }
