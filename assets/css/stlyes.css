@@ -107,7 +107,7 @@ main section .details {
     font-size: 85%;
     margin-top: 0;
 }
-.details ul {
+.contact ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -116,11 +116,11 @@ main section .details {
     padding: 0;
     width: 100%;
 }
-.details li {
+.contact li {
     display: block;
     order: 1;
 }
-.details li a {
+.contact li a {
     border-bottom: 3px solid var(--slate);
     color: var(--slate);
     padding: 4px 7px;
@@ -170,6 +170,18 @@ figcaption small {
     display: block;
     font-size: 75%;
 }
+.resume {
+    display: flex;
+    justify-content: space-between;
+}
+.resume img {
+    border: 3px solid var(--slate);
+    max-height: 130px;
+}
+.resume ul {
+    list-style-type: square;
+    margin: 0;
+}
 
 /* media queries */
 @media screen and (max-width: 768px) {
@@ -199,10 +211,10 @@ figcaption small {
     main section .details {
         padding-left: 0;
     }
-    .details ul {
+    .contact ul {
         flex-direction: column;
     }
-    .details li a {
+    .contact li a {
         border: none;
     }
     .examples figure {
