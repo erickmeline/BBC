@@ -22,6 +22,9 @@ h2 {
     font-weight: 600;
     margin: 0;
 }
+a {
+    text-decoration: none;
+}
 img {
     max-width: 100%;
 }
@@ -139,6 +142,13 @@ main section .details {
     flex: 0 0 100%;
     height: 335px;
 }
+.examples figure img {
+    opacity: .5;
+    transition: opacity .3s;
+}
+.examples figure:hover img {
+    opacity: 1;
+}
 .examples figcaption {
     background-color: var(--teal);
     bottom: 20px;
@@ -147,9 +157,6 @@ main section .details {
     padding: .75% 2.5%;
     position: absolute;
 }
-figure img {
-    display: block;
-}
 figcaption strong {
     color: var(--gray);
     display: block;
@@ -157,6 +164,7 @@ figcaption strong {
     font-weight: 600;
 }
 figcaption small {
+    color: var(--gray);
     display: block;
     font-size: 75%;
 }
