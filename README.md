@@ -13,6 +13,6 @@ HTML/CSS
 ## Screenshot
 
 ```md
-![alt text](./assets/images/screenshot.png)
+![screen shot](/assets/images/screenshot.png)
 ```
-
+why doesn't the image load here?
