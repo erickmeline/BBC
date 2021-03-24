@@ -109,6 +109,7 @@ main section .details {
 }
 .details ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     list-style: none;
     margin: 0;
@@ -117,6 +118,7 @@ main section .details {
 }
 .details li {
     display: block;
+    order: 1;
 }
 .details li a {
     border-bottom: 3px solid var(--slate);
@@ -133,14 +135,14 @@ main section .details {
     background-color: var(--slate);
     border: 4px solid var(--teal);
     flex-basis: 49.25%;
-    height: 125px;
     margin: 0 0 1.25% 0;
+    max-height: 125px;
     overflow: hidden;
     position: relative;
 }
 .examples figure:nth-child(1) {
     flex: 0 0 100%;
-    height: 335px;
+    max-height: 335px;
 }
 .examples figure img {
     opacity: .5;
@@ -167,4 +169,49 @@ figcaption small {
     color: var(--gray);
     display: block;
     font-size: 75%;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    header h1 {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .hero {
+        height: 75px;
+    }
+
+
+    main section {
+        flex-direction: column;
+    }
+    main section h3 {
+        border-bottom: 3px solid var(--slate);
+        border-right: none;
+        margin-bottom: 2%;
+        text-align: center;
+        width: 100%;
+    }
+    main section .details {
+        padding-left: 0;
+    }
+    .details ul {
+        flex-direction: column;
+    }
+    .details li a {
+        border: none;
+    }
+    .examples figure {
+        max-height: 75px;
+    }
+    .examples figure:nth-child(1) {
+        max-height: 125px;
+    }
+    .examples figcaption {
+        bottom: 5px;
+    }
 }
