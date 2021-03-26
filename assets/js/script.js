@@ -1,5 +1,11 @@
-const options = ['lowercase', 'uppercase', 'numeric', 'symbol'];
+/**
+ * Global constants
+ */
 const generateBtn = document.querySelector("#generate");
+const lowers = 'abcdefghijklmnopqrstuvwxyz';
+const numbers = '0123456789';
+const symbols = '!@#$%^&*()_{}][?><:;=';
+const options = ['lowercase', 'uppercase', 'numeric', 'symbol'];
 
 /**
  * Add event listener to generate button
@@ -27,9 +33,6 @@ function generatePassword() {
   if (passwordLength) {
     const passwordOptions = getOptions();
     if (passwordOptions) {
-      const lowers = 'abcdefghijklmnopqrstuvwxyz';
-      const numbers = '0123456789';
-      const symbols = '!@#$%^&*()_{}][?><:;=';
       let chars = '';
       let passwd = '';
       if (passwordOptions.includes('lowercase')) {
