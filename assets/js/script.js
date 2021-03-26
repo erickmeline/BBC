@@ -12,7 +12,6 @@ const options = ['lowercase', 'uppercase', 'numeric', 'symbol'];
  */
 generateBtn.addEventListener("click", writePassword);
 
-
 /**
  * Write password to the #password input
  */
@@ -62,7 +61,7 @@ function generatePassword() {
  * @returns inputLength or alerts error
  */
 function getLength() {
-  let inputLength = prompt('How many characters would you like you new password to be?');
+  let inputLength = prompt('How many characters would you like your new password to be?');
   if (inputLength) {
     inputLength = inputLength.match(/\d/) ? Number(inputLength) : 0;
     if (inputLength > 7 && inputLength < 129) {
