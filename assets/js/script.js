@@ -45,11 +45,11 @@ function generatePassword() {
         chars += symbols;
       }
       chars = chars.split('');
-      for (let i = 0; i < 128; i++) {
+      for (let i = 0; i < passwordLength; i++) {
         const random = Math.floor(Math.random() * chars.length);
         passwd += chars[random];
       }
-      return passwd.substring(0, passwordLength);
+      return passwd;
     }
   }
 }
