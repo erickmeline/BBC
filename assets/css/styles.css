@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+}
+h2, h3 {
+    text-align: center;
+}
+header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+.play-field {
+    border: 1px solid #ccc;
+    margin: 5% auto;
+    padding: 2%;
+    width: 75%;
+}
+.timer {
+    border: 1px solid #ccc;
+    margin: 15px 0;
+    opacity: 0;
+    text-align: center;
+    transition: opacity .5s;
+    width: 200px;
+}
+.timer p {
+    margin: 0;
+    padding: 4px;
+}
+.start {
+    display: block;
+    height: 40px;
+    margin: 15px auto;
+    padding: 5px 20px;
+}
+.time {
+    display: block;
+}
