@@ -33,11 +33,11 @@ const newGame = () => {
  */
 const checkIt = (e) => {
     e.stopPropagation();
-    const choice = Number(e.target.getAttribute('data-choice'));console.log('clicked',choice);
-    if (choice === answer) {console.log('correct');
+    const choice = Number(e.target.getAttribute('data-choice'));
+    if (choice === answer) {
         correct++;
     }
-    else {console.log('incorrect');
+    else {
         seconds-=10;
     }
     showQuestion();
