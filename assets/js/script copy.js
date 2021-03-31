@@ -1,16 +1,13 @@
 /**
  * Global constants
  */
-let seconds, asked, correct, answer, interval;
+let seconds, asked, correct, interval;
 let streak = Number(localStorage.getItem('streak')) || 0;
 const timeEl = document.querySelector('.time');
 const timerEl = document.querySelector('.timer');
 const startEl = document.querySelector('.start');
 const playFieldEl = document.querySelector('.play-field');
 const optionsEl = document.querySelector('.options');
-const highscoresEl = document.querySelector('.highscores');
-const scoresEl = document.querySelector('.scores');
-const scoresEl = document.querySelector('.save');
 
 /**
  * Kick off the timer and fire up the question generator
@@ -24,29 +21,9 @@ const newGame = () => {
     startEl.style = 'display:none';
     playFieldEl.children[1].style  = 'display:none';
     optionsEl.style = 'display:block;';
-    showQuestion();
 }
 
-/**
- * Check input choice and send back to question generator
- */
-const checkIt = (e) => {
-    e.stopPropagation();
-    const choice = Number(e.target.getAttribute('data-choice'));console.log('clicked',choice);
-    if (choice === answer) {console.log('correct');
-        correct++;
-    }
-    else {console.log('incorrect');
-        seconds-=10;
-    }
-    showQuestion();
-}
-
-/**
- * Show a random question or end the game
- */
 const showQuestion = () => {
-    if (gameData.length) {
         const random = getRandom();
         playFieldEl.children[0].textContent = gameData[random].question;
         optionsEl.children[0].textContent = gameData[random].options[0];
@@ -57,18 +34,27 @@ const showQuestion = () => {
         optionsEl.children[2].setAttribute('data-choice', 3);
         optionsEl.children[3].textContent = gameData[random].options[3];
         optionsEl.children[3].setAttribute('data-choice', 4);
-        answer = gameData[random].correct;
-        asked.push(random);
-        gameData.splice(random, 1);
-    }
-    else {
-        endGame('That\'s it!');
-    }
+        optionsEl.addEventListener('click', (e) => {
+            const choice = Number(e.target.getAttribute('data-choice'));console.log('clicked',choice);
+            if (choice === gameData[random].correct) {
+                correct++;
+                // seconds+=10;
+            }
+            else {
+                // seconds-=10;
+            }
+
+        });
+    // if (gameData.length) {
+    //     asked.push(random);
+    //     gameData.splice(random, 1);
+    //     showQuestion();
+    // }
+    // else {
+    //     endGame('That\'s it!');
+    // }
 }
 
-/**
- * Return a random question number
- */
 const getRandom = () => {
     return random = Math.floor(Math.random() * gameData.length);
 }
@@ -83,8 +69,10 @@ const endGame = (headline) => {
     playFieldEl.children[0].textContent  = headline;
     playFieldEl.children[0].style = 'display:block';
     playFieldEl.children[1].textContent = `You correctly answered ${correct} out of ${asked.length}!`;
-    playFieldEl.children[1].style = 'display:block;text-align:center';
-    optionsEl.removeEventListener('click', newGame);
+    playFieldEl.children[1].style = 'display:block';
+    startEl.textContent = 'Play Again';
+    startEl.style = 'display:block';
+
 }
 
 /**
@@ -104,7 +92,7 @@ const timer = () => {
  *  Add listeners
  */
 startEl.addEventListener('click', newGame);
-optionsEl.addEventListener('click', checkIt);
+
 
 /**
  * Data
