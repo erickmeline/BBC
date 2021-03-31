@@ -43,17 +43,18 @@ Test Case 3: [100, 50, 75, 80]
 Step One:
 
 Q: What are you going to do? 
-
-A: 
+  
+A: write an accumulator function that accepts an array of numbers, and returns their sum.
 
 Q: How are you going to do it? 
-
-A: 
-
+  
+A: using the array reduce method.
+  
 Q: Why are you going to do it? 
+  
+A: efficency.
 
-A: 
-
+```
 Step Two: 
 
 Q: What are you going to do? 
@@ -81,7 +82,7 @@ A:
 Q: Why are you going to do it? 
 
 A: 
-
+```
 
 
 <hr>
