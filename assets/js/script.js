@@ -71,7 +71,7 @@ const showQuestion = () => {
  * Return a random question number
  */
 const getRandom = () => {
-    return random = Math.floor(Math.random() * gameData.length);
+    return Math.floor(Math.random() * gameData.length);
 }
 
 /**
@@ -154,7 +154,7 @@ const gameData = [
         correct: 1
     },
     {
-        question: 'Which of these are not falsey?',
+        question: 'Which of these is not falsey?',
         options: ['""', '{}', '0', 'undefined'],
         correct: 2
     }
