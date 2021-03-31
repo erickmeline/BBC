@@ -10,7 +10,8 @@ const playFieldEl = document.querySelector('.play-field');
 const optionsEl = document.querySelector('.options');
 const highscoresEl = document.querySelector('.highscores');
 const scoresEl = document.querySelector('.scores');
-const scoresEl = document.querySelector('.save');
+const saveEl = document.querySelector('.save');
+const nameEl = document.querySelector('#name');
 
 /**
  * Kick off the timer and fire up the question generator
@@ -85,6 +86,23 @@ const endGame = (headline) => {
     playFieldEl.children[1].textContent = `You correctly answered ${correct} out of ${asked.length}!`;
     playFieldEl.children[1].style = 'display:block;text-align:center';
     optionsEl.removeEventListener('click', newGame);
+    highscoresEl.style = 'display:block';
+}
+
+/**
+ * Save score
+ */
+const save = () => {
+    const name = nameEl.value; console.log('name',name);
+    let scores = localStorage.getItem('scores');
+    scores = scores ? JSON.parse(scores) : [];
+    scores.unshift({"name": name, "score": correct});
+    for (let i = 0; i < scores.length; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${scores[i].name} scored ${scores[i].score}`;
+        scoresEl.appendChild(listItem);
+    }
+    localStorage.setItem('scores', JSON.stringify(scores));
 }
 
 /**
@@ -105,6 +123,7 @@ const timer = () => {
  */
 startEl.addEventListener('click', newGame);
 optionsEl.addEventListener('click', checkIt);
+saveEl.addEventListener('click', save);
 
 /**
  * Data

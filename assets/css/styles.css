@@ -54,3 +54,6 @@ header {
     /* display: none; */
     text-align: center;
 }
+.scores {
+    list-style: none;
+}
