@@ -81,7 +81,7 @@ const endGame = (headline) => {
     clearInterval(interval);
     timerEl.style.opacity = 0;
     optionsEl.style = 'display:none;';
-    playFieldEl.children[0].textContent  = headline;
+    playFieldEl.children[0].textContent = headline;
     playFieldEl.children[0].style = 'display:block';
     playFieldEl.children[1].textContent = `You correctly answered ${correct} out of ${asked.length}!`;
     playFieldEl.children[1].style = 'display:block;text-align:center';
@@ -150,7 +150,7 @@ const gameData = [
     },
     {
         question: 'Which of the following is a properly formed javascript array?',
-        options: ['[a, b, c]', '[a = 1, b = 2, c = 3', '[a: 1, b: 2, c: 3]', '[1: a, 2: b 3: c]'],
+        options: ['[a, b, c]', '[a = 1, b = 2, c = 3]', '[a: 1, b: 2, c: 3]', '[1: a, 2: b 3: c]'],
         correct: 1
     },
     {
