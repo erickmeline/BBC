@@ -93,10 +93,14 @@ const endGame = (headline) => {
  * Save score
  */
 const save = () => {
-    const name = nameEl.value; console.log('name',name);
+    highscoresEl.style = 'display:none';
+    scoresEl.style = 'display:block';
+    const name = nameEl.value;
     let scores = localStorage.getItem('scores');
     scores = scores ? JSON.parse(scores) : [];
-    scores.unshift({"name": name, "score": correct});
+    if (name.length) {
+        scores.unshift({"name": name, "score": correct});
+    }
     for (let i = 0; i < scores.length; i++) {
         const listItem = document.createElement('li');
         listItem.textContent = `${scores[i].name} scored ${scores[i].score}`;
