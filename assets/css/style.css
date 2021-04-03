@@ -1,9 +1,82 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1;
+/* global */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --background: #fff;
+  --lightest: #f2f2f2;
+  --light: #eee;
+  --medium: #ddd;
+  --dark: #444;
+}
+html, body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  height: 100%;
+  margin: 0;
 }
 
+/* header */
+.jumbotron {
+  background-color: var(--lightest);
+  border-bottom: 10px solid var(--dark);
+  color: var(--dark);
+  padding: 0;
+  text-align: center;
+}
+
+/* table */
+table {
+  border-collapse: separate;
+}
+.table-bordered td {
+  border: none;
+}
+.table tr {
+  background-color: var(--lightest);
+}
+.table tr td:nth-child(1), .table tr td:nth-child(3) {
+  width: 10%;
+}
+.table tr td:nth-child(1) {
+  border-right: 1px solid var(--medium);
+  border-top: 1px dashed var(--medium);
+  text-align: center;
+}
+.table tr td:nth-child(2) {
+  border-top: 1px solid var(--medium);
+}
+.table tr td:nth-child(3) {
+  border-left: 1px solid var(--medium);
+  border-top: 1px solid var(--medium);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  text-align: center;
+}
+td input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+
+
+
+
+
+footer {
+  background-color: var(--dark);
+  color: transparent;
+}
+
+
+
+
+
+
+
+
+/*
 textarea{
   background: transparent;
   border: none;
@@ -13,13 +86,7 @@ textarea{
   padding: 10px;
 }
 
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color: black;
-  border-radius: 0;
-  border-bottom: 10px solid black;
-}
+
 
 .description{
   white-space: pre-wrap;
@@ -68,4 +135,4 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
-}
+} */
