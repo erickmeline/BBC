@@ -31,8 +31,8 @@ const initTime = () => {
 /**
  *  Set time styles
  */
-const calcTimes = () => {
-    const currentHour = moment().format('HH');console.log(currentHour);
+const calcTimes = () => {const currentHour = 13;
+    // const currentHour = moment().format('HH');console.log(currentHour);
     for (let i = 0; i < 9; i++) {
         if (i + 9 < currentHour) {
             $('input[name='+[i]+']').parent().addClass('past');
