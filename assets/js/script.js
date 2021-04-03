@@ -1,3 +1,6 @@
+/**
+ * Global constants
+ */
 const currentDayEl = document.querySelector('#currentDay');
 const input0El = document.querySelector('#input0');
 const input1El = document.querySelector('#input1');
@@ -11,22 +14,40 @@ const input8El = document.querySelector('#input8');
 
 let timeSlots;
 
-const currentDate = moment(new Date());//moment().format('dddd, MMMM Do');
+const currentDate = moment().format('dddd, MMMM Do');
 currentDayEl.textContent = currentDate;
 
 /**
- *  Retrieve data from store, add data, add time style
+ *  Retrieve data from store, add data
  */
 const initTimeBlocks = () => {
     timeSlots = localStorage.getItem('timeSlots');
     timeSlots = timeSlots ? JSON.parse(timeSlots) : [];
     if (timeSlots.length) {
         for (let i = 0; i < 9; i++) {
-            const element = `input${i}El`;
-            element[i].textContent = timeSlots[i] || '';
+            $('input[name='+[i]+']').val(timeSlots[i]);
         }
     }
-// do time cals here
+    calcTimes();
+}
+
+/**
+ *  Set time styles
+ */
+const calcTimes = () => {
+    // const currentHour = moment().format('HH');console.log(currentHour);
+    currentHour = 14;
+    for (let i = 0; i < 9; i++) {
+        if (i + 9 < currentHour) {
+            $('input[name='+[i]+']').parent().addClass('past');
+        }
+        else if (i + 9 === currentHour) {
+            $('input[name='+[i]+']').parent().addClass('present');
+        }
+        else {
+            $('input[name='+[i]+']').parent().addClass('future');
+        }
+    }
 }
 
 /**

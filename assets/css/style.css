@@ -46,6 +46,7 @@ table {
   border-top: 1px solid var(--medium);
 }
 .table tr td:nth-child(3) {
+  background-color: rgba(51,51,255,.1);
   border-left: 1px solid var(--medium);
   border-top: 1px solid var(--medium);
   border-top-right-radius: 15px;
@@ -59,80 +60,18 @@ td input {
   padding: 0;
   width: 100%;
 }
+.past {
+  background-color: rgba(102,102,102,.1);
+}
+.present {
+  background-color: rgba(255,0,0,.1);
+}
+.future {
+  background-color: rgba(0,255,0,.1);
+}
 
-
-
-
-
+/* footer */
 footer {
   background-color: var(--dark);
   color: transparent;
 }
-
-
-
-
-
-
-
-
-/*
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
-}
-
-
-
-.description{
-  white-space: pre-wrap;
-}
-
-.time-block{
-  text-align: center;
-  border-radius: 15px;
-}
-
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
-}
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
-
-.past {
-  background-color: #d3d3d3;
-  color: white;
-}
-
-.present {
-  background-color: #ff6961;
-  color: white;
-}
-
-.future {
-  background-color: #77dd77;
-  color: white;
-}
-
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
-}
-
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-} */
