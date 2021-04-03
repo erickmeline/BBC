@@ -1,6 +1,7 @@
 /**
  * Global constants
  */
+let timeSlots;
 const currentDayEl = document.querySelector('#currentDay');
 const input0El = document.querySelector('#input0');
 const input1El = document.querySelector('#input1');
@@ -12,15 +13,11 @@ const input6El = document.querySelector('#input6');
 const input7El = document.querySelector('#input7');
 const input8El = document.querySelector('#input8');
 
-let timeSlots;
-
-const currentDate = moment().format('dddd, MMMM Do');
-currentDayEl.textContent = currentDate;
-
 /**
  *  Retrieve data from store, add data
  */
-const initTimeBlocks = () => {
+const initTime = () => {
+    currentDayEl.textContent = moment().format('dddd, MMMM Do');
     timeSlots = localStorage.getItem('timeSlots');
     timeSlots = timeSlots ? JSON.parse(timeSlots) : [];
     if (timeSlots.length) {
@@ -35,8 +32,7 @@ const initTimeBlocks = () => {
  *  Set time styles
  */
 const calcTimes = () => {
-    // const currentHour = moment().format('HH');console.log(currentHour);
-    currentHour = 14;
+    const currentHour = moment().format('HH');console.log(currentHour);
     for (let i = 0; i < 9; i++) {
         if (i + 9 < currentHour) {
             $('input[name='+[i]+']').parent().addClass('past');
@@ -73,4 +69,4 @@ input6El.addEventListener('blur', save);
 input7El.addEventListener('blur', save);
 input8El.addEventListener('blur', save);
 
-initTimeBlocks();
+initTime();
