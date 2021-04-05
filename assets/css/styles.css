@@ -54,6 +54,7 @@ aside button {
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
   color: var(--gray);
+  outline: none;
   padding: 6%;
   flex-basis: 40px;
 }
