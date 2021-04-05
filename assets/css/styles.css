@@ -1,0 +1,28 @@
+
+/* global */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --background: #fff;
+  --lightest: #f2f2f2;
+  --light: #eee;
+  --medium: #ddd;
+  --dark: #444;
+}
+html, body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+}
+aside {
+    background-color: #f2f2f2;
+}
+section {
+    border: 1px solid #ccc;
+}
+/* footer */
+footer {
+  background-color: var(--dark);
+  color: transparent;
+}
