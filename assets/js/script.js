@@ -35,7 +35,8 @@ const displayCurrent = () => {
     let location = document.querySelector('[type="search"').value;
     if (location) {
         const currentUrl = `${url_current}?q=${location}&units=imperial&appid=${api_kei}`;
-        fetchData(currentUrl).then((data) => {//console.log('data:',data);
+        fetchData(currentUrl).then((data) => {
+            currentEl.innerHTML = '';
             const headline = document.createElement('h2');
             headline.textContent = `${data.name} ${moment().format('dddd, MMMM Do')}`;
             currentEl.appendChild(headline);
@@ -49,14 +50,15 @@ const displayCurrent = () => {
             dataP3.textContent = `Wind Speed: ${data.wind.speed} MPH`;
             currentEl.appendChild(dataP3);
             const uvUrl = `${url_uvIndex}?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${api_kei}`;
-            fetchData(uvUrl).then((data) => {//console.log('data:',data);
+            fetchData(uvUrl).then((data) => {
                 const dataP4 = document.createElement('p');
                 dataP4.innerHTML = `UV Index: <span>${data.value}</span>`;
                 currentEl.appendChild(dataP4);
             });
             const newLi = document.createElement('li');
             newLi.textContent = data.name;
-            historyEl.appendChild(newLi);
+            historyEl.prepend(newLi);
+            historyEl.style = 'display:block';
             history.unshift(data.name);
             localStorage.setItem('history', JSON.stringify(history));
         });

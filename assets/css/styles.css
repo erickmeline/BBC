@@ -62,10 +62,11 @@ aside button:hover {
   background-color: var(--light);
   cursor: pointer;
 }
-aside ul {
+aside .history {
   background-color: var(--white);
   border: 1px solid var(--medium);
   border-radius: 5px;
+  display: none;
   margin: 15px 0;
   padding: 0;
   list-style-type: none;
