@@ -7,6 +7,10 @@ const url_forcast = 'https://api.openweathermap.org/data/2.5/forecast';
 const api_kei = '7875554f2197f6cdb5c5b47cbfb1c260';
 const searchEl = document.querySelector('button');
 const currentEl = document.querySelector('.current');
+const forcastEl = document.querySelector('.forcast');
+const historyEl = document.querySelector('.history');
+let history = localStorage.getItem('history');
+history = history ? JSON.parse(history) : [];
 
 /**
  * Fetch request
@@ -50,10 +54,12 @@ const displayCurrent = () => {
                 dataP4.innerHTML = `UV Index: <span>${data.value}</span>`;
                 currentEl.appendChild(dataP4);
             });
-
+            const newLi = document.createElement('li');
+            newLi.textContent = data.name;
+            historyEl.appendChild(newLi);
+            history.unshift(data.name);
+            localStorage.setItem('history', JSON.stringify(history));
         });
-        // localStorage.setItem('locations', JSON.stringify(locations));
-
     }
 }
 
