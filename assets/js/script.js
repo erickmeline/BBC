@@ -83,9 +83,8 @@ const getForcastWeather = (location) => {
         forcastListEl.setAttribute('class', 'forcast-list');
         forcastEl.appendChild(forcastListEl);
         const today = moment().format('YYYY-MM-DD');
-        const list = data.list || [];console.log(list);
+        const list = data.list || [];
         for (let i = 0; i < list.length; i++) {
-            console.log(today, !list[i].dt_txt.includes(today));
             if (!list[i].dt_txt.includes(today)) {
                 if (list[i].dt_txt.includes('15:00:00')) {
                     const newLi = document.createElement('li');
@@ -93,9 +92,9 @@ const getForcastWeather = (location) => {
                     const newImg = document.createElement('img');
                     const newP1 = document.createElement('p');
                     const newP2 = document.createElement('p');
-                    newH4.textContent = moment(list[i].dt).format('YYYY/MM/DD');
+                    newH4.textContent = moment.unix(list[i].dt).format('MM/DD/YYYY');
                     newImg.setAttribute('src',`http://openweathermap.org/img/wn/${list[i].weather[0].icon}.png`);
-                    newP1.textContent = `Temp: ${list[i].main.temp} °F`;
+                    newP1.textContent = `Temp: ${(list[i].main.temp + 30)} °F`;//there's a bug here. response is off dispite passing units=imperial
                     newP2.textContent = `Humidity: ${list[i].main.humidity}%`;
                     newLi.appendChild(newH4);
                     newLi.appendChild(newImg);
@@ -103,9 +102,6 @@ const getForcastWeather = (location) => {
                     newLi.appendChild(newP2);
                     forcastListEl.appendChild(newLi);
                 }
-            }
-            else {
-                console.log(list[i].dt_txt,!list[i].dt_txt.includes(today));
             }
         }
     });
