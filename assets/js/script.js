@@ -34,7 +34,6 @@ const fetchData = (url) => {
  *  Kick off a current weather request and add to page
  */
 const getCurrentWeather = (location) => {
-    location = location || searchInputEl.value;
     if (location) {
         const currentUrl = `${url_current}?q=${location}&units=imperial&appid=${api_kei}`;
         fetchData(currentUrl).then((data) => {
@@ -60,12 +59,14 @@ const getCurrentWeather = (location) => {
                 dataP4.innerHTML = `UV Index: <span>${data.value}</span>`;
                 currentEl.appendChild(dataP4);
             });
-            const newLi = document.createElement('li');
-            newLi.textContent = data.name;
-            historyEl.prepend(newLi);
             historyEl.style = 'display:block';
-            history.unshift(data.name);
-            localStorage.setItem('history', JSON.stringify(history));
+            if (!history.includes(data.name)) {
+                const newLi = document.createElement('li');
+                newLi.textContent = data.name;
+                historyEl.prepend(newLi);
+                history.unshift(data.name);
+                localStorage.setItem('history', JSON.stringify(history));
+            }
         });
         searchInputEl.value = '';
         getForcastWeather(location);
@@ -123,12 +124,12 @@ const recallPrevious = (e) => {
  *  Get previous searches and add to history sidebar
  */
 const reconstituteState = () => {
-    if (history.length) { // need to dedupe
+    if (history.length) {
         getCurrentWeather(history[0]);
         for (let i = 0; i < history.length; i++) {
             const newLi = document.createElement('li');
             newLi.textContent = history[i];
-            historyEl.prepend(newLi);
+            historyEl.appendChild(newLi);
             historyEl.style = 'display:block';
         }
     }
@@ -149,9 +150,17 @@ const getLocation = () => {
 }
 
 /**
+ *  Handle search click
+ */
+const handleClick = () => {
+    const location = searchInputEl.value;console.log('location',location);
+    getCurrentWeather(location);
+}
+
+/**
  *  Add listeners
  */
-searchEl.addEventListener('click', getCurrentWeather);
+searchEl.addEventListener('click', handleClick);
 historyEl.addEventListener('click', recallPrevious);
 
 reconstituteState();
