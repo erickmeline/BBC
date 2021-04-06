@@ -55,8 +55,9 @@ const getCurrentWeather = (location) => {
             currentEl.appendChild(dataP3);
             const uvUrl = `${url_uvIndex}?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${api_kei}`;
             fetchData(uvUrl).then((data) => {
+                let level = `level${Math.round(data.value)}`;
                 const dataP4 = document.createElement('p');
-                dataP4.innerHTML = `UV Index: <span>${data.value}</span>`;
+                dataP4.innerHTML = `UV Index: <span class="${level}">${data.value}</span>`;
                 currentEl.appendChild(dataP4);
             });
             historyEl.style = 'display:block';
