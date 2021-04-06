@@ -13,5 +13,8 @@ HTML/CSS/JS
 ## Librarys
 MomentJs
 
+## External APIs
+https://openweathermap.org/
+
 ## Screenshot
 ![screen shot](./assets/images/screenshot.png)
