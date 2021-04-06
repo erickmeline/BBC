@@ -23,7 +23,7 @@ const fetchData = (url) => {
             return response.json();
         }
         else {
-            console.error('Error:', response.statusText);
+            console.error('Error:', response.statusText); // need a better way to handle rejects
         }
     }).catch((error) => {
         console.error('Error: no response');
@@ -31,10 +31,10 @@ const fetchData = (url) => {
 }
 
 /**
- *  Kick off a current weather request
+ *  Kick off a current weather request and add to page
  */
-const getCurrentWeather = () => {
-    let location = searchInputEl.value;
+const getCurrentWeather = (location) => {
+    location = location || searchInputEl.value;
     if (location) {
         const currentUrl = `${url_current}?q=${location}&units=imperial&appid=${api_kei}`;
         fetchData(currentUrl).then((data) => {
@@ -46,7 +46,7 @@ const getCurrentWeather = () => {
             dataImg.setAttribute('src',`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
             currentEl.appendChild(dataImg);
             const dataP1 = document.createElement('p');
-            dataP1.textContent = `Temperature: ${data.main.temp} °F`;
+            dataP1.textContent = `Temperature: ${data.main.temp} °F`;// there's a bug here. temp is way off despite passing units=imperial
             currentEl.appendChild(dataP1);
             const dataP2 = document.createElement('p');
             dataP2.textContent = `Humidity: ${data.main.humidity}%`;
@@ -72,6 +72,9 @@ const getCurrentWeather = () => {
     }
 }
 
+/**
+ *  Get the forcast and add to page
+ */
 const getForcastWeather = (location) => {
     const forcastUrl = `${url_forcast}?q=${location}&units=imperial&appid=${api_kei}`;
     fetchData(forcastUrl).then((data) => {
@@ -94,7 +97,7 @@ const getForcastWeather = (location) => {
                     const newP2 = document.createElement('p');
                     newH4.textContent = moment.unix(list[i].dt).format('MM/DD/YYYY');
                     newImg.setAttribute('src',`http://openweathermap.org/img/wn/${list[i].weather[0].icon}.png`);
-                    newP1.textContent = `Temp: ${(list[i].main.temp + 30)} °F`;//there's a bug here. response is off dispite passing units=imperial
+                    newP1.textContent = `Temp: ${Number(list[i].main.temp + 30).toFixed(2)} °F`;//there's a bug here. response is off dispite passing units=imperial
                     newP2.textContent = `Humidity: ${list[i].main.humidity}%`;
                     newLi.appendChild(newH4);
                     newLi.appendChild(newImg);
@@ -105,6 +108,30 @@ const getForcastWeather = (location) => {
             }
         }
     });
+}
+
+/**
+ *  Fire off a search from history list
+ */
+const recallPrevious = (e) => {
+    e.stopPropagation();
+    const location = e.target.innerText;
+    getCurrentWeather(location);
+}
+
+/**
+ *  Get previous searches and add to history sidebar
+ */
+const reconstituteState = () => {
+    if (history.length) { // need to dedupe
+        getCurrentWeather(history[0]);
+        for (let i = 0; i < history.length; i++) {
+            const newLi = document.createElement('li');
+            newLi.textContent = history[i];
+            historyEl.prepend(newLi);
+            historyEl.style = 'display:block';
+        }
+    }
 }
 
 /**
@@ -121,11 +148,10 @@ const getLocation = () => {
     }
 }
 
-
-
-
-
 /**
  *  Add listeners
  */
 searchEl.addEventListener('click', getCurrentWeather);
+historyEl.addEventListener('click', recallPrevious);
+
+reconstituteState();

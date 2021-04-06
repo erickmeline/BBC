@@ -16,6 +16,7 @@ html, body {
   margin: 0;
 }
 
+/* header */
 header {
     background-color: var(--dark);
     color: var(--lightest);
@@ -25,10 +26,14 @@ h1 {
   margin: 0;
   text-align: center;
 }
+
+/* main */
 main {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* sidebar */
 aside {
     background-color: var(--light);
     flex-basis: 1;
@@ -81,18 +86,19 @@ aside li {
 aside li:last-of-type {
   border: none;
 }
+
+/* results sections */
 article {
   flex-basis: 3;
   margin: 15px;
   width: 75%;
 }
 section {
-  background-color: var(--lightest);
-    border: 1px solid var(--medium);
-    border-radius: 5px;
-    color: var(--gray);
-    margin-bottom: 15px;
-    padding: 1.5%;
+  border: 1px solid var(--medium);
+  border-radius: 5px;
+  color: var(--gray);
+  margin-bottom: 15px;
+  padding: 1.5%;
 }
 .current h2 {
   float: left;
