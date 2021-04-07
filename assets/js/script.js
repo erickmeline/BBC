@@ -99,7 +99,7 @@ const getForcastWeather = (location) => {
                     const newP2 = document.createElement('p');
                     newH4.textContent = moment.unix(list[i].dt).format('MM/DD/YYYY');
                     newImg.setAttribute('src',`http://openweathermap.org/img/wn/${list[i].weather[0].icon}.png`);
-                    newP1.textContent = `Temp: ${Number(list[i].main.temp + 30).toFixed(2)} °F`;//there's a bug here. response is off dispite passing units=imperial
+                    newP1.textContent = `Temp: ${Number(list[i].main.temp + 0).toFixed(2)} °F`;//there's a bug here. response is off dispite passing units=imperial
                     newP2.textContent = `Humidity: ${list[i].main.humidity}%`;
                     newLi.appendChild(newH4);
                     newLi.appendChild(newImg);
