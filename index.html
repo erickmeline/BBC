@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>🍿 Netlix and Chilled Cocktails 🍸</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+</head>
+
+<body style="">
+    <!-- top -->
+    <div id="top" class="row" style="margin-top: 1rem">
+        🍿 + 🍸
+        <hr>
+    </div>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <header>
+
+        <div class="row">
+            <div class="column" style="margin-top: 20px">
+                <h1>Netflix and Chilled Cocktails!</h1>
+                <h4>Have a Drink and be Entertained</h4>
+                <p>
+                <h5>Let's face it... Some of us can be pretty indecisive about what we feel like watching. Or drinking,
+                    for that matter.</h5>
+                </p>
+                <p>
+                <h5>If that's you, we're here to help with some friendly suggestions! </h5>
+                </p>
+                <br></p>
+            </div>
+        </div><!-- row -->
+    </header>
+
+
+    <div id="form-row" class="row">
+        <form>
+            <label>Hey there, movie drinker...! What do they call you?</label>
+            <input id="name" type="text" name="name" placeholder="your name" required="required"
+                data-parsley-error-message="<b>Nice Try there, you! How about a name?</b>">
+            <button id="submit" class="button-primary" style="">Submit</button>
+        </form>
+    </div>
+    <div id="hello">
+        <p id="hello-p"></p>
+    </div>
+
+    <div id="buttons-row" class="row">
+        <!-- buttons of movie genres-->
+        <div id="button-container" class="six columns">
+            <button id="button-2021" class="button pill-button">🎉
+                2021</button>
+            <button id="button-drama" class="button pill-button">👺
+                1999 Rated R</button>
+            <button id="button-fincher" class="button pill-button">♉️
+                Fincher</button>
+            <button id="button-1969" class="button pill-button">🧙‍♂️ 1969
+                Comedies</button>
+            <button id="button-scifi" class="button pill-button">&#128640
+                1984
+                SciFi</button>
+            <button id="button-kids" class="button pill-button">👶
+                Kids</button>
+            <button id="button-brad-ed" class="button pill-button">🧼️ Pitt +
+                Norton</button>
+            <button id="button-pop" class="button pill-button">🍿
+                1977 Popular</button>
+        </div>
+        <!-- buttons of cocktail ingredients -->
+        <div id="cocktails" class="six columns">
+            <button class="button pill-button">&#127796Rum</button>
+            <button class="button pill-button">&#127805Whiskey</button>
+            <button class="button pill-button">&#9973Gin</button>
+            <button class="button pill-button">&#129364Vodka</button>
+            <button class="button pill-button">&#127797Tequila</button>
+        </div>
+    </div><!-- row -->
+
+
+    </div><!-- row -->
+
+    <div id="footer" class="row">
+        <hr>
+        <span class="footer-text">🎦 Movie suggestions courtsey of The Movie Database API </span><span
+            class="footer-text">🥤 Drink suggestions courtsey of The Cocktail Database API </span><span
+            class="footer-text"><a href="https://github.com/darrindevs/netflix-and-chilled-cocktails"
+                target="blank">Learn more about the project</a></span>
+    </div><!-- -->
+    </div><!-- container -->
+
+
+    <script src="assets/js/media.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+    <script>
+        var formInstance = $('form').parsley();
+        var field = $('input').parsley();
+        $('form').submit(function (event) {
+            event.preventDefault();
+            localStorage.setItem('name', $('#name').val());
+            $('h4 span').text(' ' + $('#name').val());
+            console.log()
+
+        });
+        $(document).ready(function () {
+            $('h4 span').text(' ' + localStorage.getItem('name'));
+        });
+        //* event listener for click and then display message using local storage
+        $("#submit").click(function () {
+            $("#hello-p").text("Hello " + localStorage.getItem('name') + ". Feeling lucky? Pick a movie category and pick a drink ingredient!");
+            $("#form-row").hide();
+
+        });
+    </script>
+</body>
+
+</html>

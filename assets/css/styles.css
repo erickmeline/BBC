@@ -1,0 +1,141 @@
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* Form */
+
+#form-row {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: #B94A48;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+form {
+    position: relative;
+}
+
+.parsley-errors-list {
+    position: absolute;
+    bottom: -20px;
+}
+
+#hello-p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    
+}
+
+
+#cocktails {
+    margin-bottom: 300px;
+}
+
+/* Buttons */
+
+.pill-button {
+    background-color: #dfdbdb; 
+    border-color: lightgrey; 
+    border-radius: 80px; 
+    font-size: 18px;
+}
+
+.six {
+    margin-bottom: 50px;
+}
+
+#media-result {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 5% 5% 0;
+}
+
+#media-result figure {
+    margin: 0;
+}
+
+#media-result figure img {
+    max-width: 50%;
+}
+
+#media-result figcaption {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#drink-result {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 5% 5% 0;
+}
+
+#drink-result figure {
+    margin: 0;
+}
+
+#drink-result figure img {
+    max-width: 50%;
+}
+
+#drink-result figcaption {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+
+#content {
+    z-index: 0;
+    margin-bottom: 100px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0%;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+
+}
+
+.footer-text {
+    margin-right: 10px;
+}
