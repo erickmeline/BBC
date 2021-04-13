@@ -1,0 +1,64 @@
+Erick Meline
+Walnut Creek, CA 94596
+Cell: 925-451-1168
+E-mail: erickmeline@gmail.com
+
+--------------------------------------------------------------------------------
+Resources
+--------------------------------------------------------------------------------
+
+* https://www.linkedin.com/in/erick-m-2943819/
+* https://github.com/erickmeline
+
+--------------------------------------------------------------------------------
+Objective
+--------------------------------------------------------------------------------
+
+To outperform and build on innovation utilizing both creativity and programing expertise.
+
+--------------------------------------------------------------------------------
+Employment Skills
+--------------------------------------------------------------------------------
+
+* Expert level knowledge of HTML, CSS & Web development
+* Web application development and customization
+* HTML5, CSS3, JavaScript, React, jQuery
+
+--------------------------------------------------------------------------------
+Personal Highlights
+--------------------------------------------------------------------------------
+
+* Detail oriented
+* Quick learner
+* Professional work ethic
+* Self motivated
+* Write clearly
+* Deadline driven
+
+--------------------------------------------------------------------------------
+Employment History
+--------------------------------------------------------------------------------
+
+2015-present - Front-end Developer
+Sierra Club; Oakland, CA
+Managed Sierra Club's addup.org web property which included creating new features, and modifying existing features. Tech was mostly vanilla javascript and React. Liaised with third party vendor that built the site. Integrated customized features using Salesforce apis for data management. Conducted various A/B testing using Optimizely testing suite.
+
+2013-2014 - Senior Front-end Developer
+GE Software; San Ramon, CA
+Developed single page application modules in angular and vanilla javascript. Provided team expertise in front-end html/css semantics and responsive design fundamentals. Also had projects that used Bootstrap, HTML5 Canvas, High Charts, and Phone Gap. Used Jasmine testing framework and Karma to perform javascript unit testing.
+
+2011-2013 - Senior Front-end Developer
+Expedia Inc; San Francisco, CA
+Collaborated with back-end developers, and UX/designers to provide the front-end development of HTML, Javascript, and JSTL for new and updated application features for both desktop and mobile sites. Most recently, architecting a mobile-first responsive HTML5 and CSS3 methodology with a focus on website performance optimization.
+
+2006-2011 - Lead Front-end Developer
+1up.com, Hearst Media; San Francisco, CA
+Duties include the hand-coding of HTML, Javascript and JSTL within the JSP layer using Eclipse with CVS. Updating legacy javascript with jQuery framework. Managed a small Production Team of Associate Web Producers to deliver daily website content, updates, landing pages, promotions, and emails. Converted the sites' hundreds of table-based HTML layout JSPs to valid semantic table-less xhtml and valid css.
+
+2000-2006 - Website Architect
+MarkMonitor/Alldomains.com; San Francisco, CA
+Responsible for front-end development of markmonitor.com, alldomains.com and allwhois.com as well as the internal corporate intranet. Primary duties included HTML, and programming in Perl & Javascript, email campaigns, and marketing deliverables. Liaison between Marketing and Engineering. I began this position with Alldomains.com which was acquired by MarkMonitor in 2003.
+
+1999-2000 - Webmaster
+Stedmann Marketing; Calistoga, CA
+Designed website templates and implemented websites, hosting, and email for clients. Designed, developed, and maintained web and client/server applications and their UI using Perl and Javascript. Duties also included client logo design, system administration, and network engineering.
