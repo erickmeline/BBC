@@ -51,7 +51,7 @@ header nav a {
     position: relative;
 }
 
-/* main */
+/* main containers */
 main {
     display: flex;
     flex-direction: column
@@ -59,15 +59,69 @@ main {
 main section {
     display: flex;
 }
-main section h3 {border: 1px solid red;
+main section h2 {
     border-right: 2px solid var(--slate);
-    flex-basis: 25%;
+    flex-basis: 15%;
     padding: 1%;
     text-align: right;
 }
-main section section {border: 1px solid red;
-    flex-basis: 75%;
+main section section {
+    display: flex;
+    flex-basis: 85%;
+    justify-content: space-between;
     padding: 1%;
+    margin-right: 10%;
+}
+
+/* about section */
+#about p {
+    line-height: 140%;
+}
+
+/* work section */
+#work section {
+    flex-wrap: wrap;
+}
+#work figure {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    flex-basis: 48%;
+    margin: 1%;
+    padding: 2%;
+    text-align: center;
+}
+#work figcaption {
+    background-color: #444;
+    color: #fff;
+    margin-top: 5%;
+    padding: 1%;
+}
+#work img {
+    height: 100px;
+    max-width: 100%;
+}
+
+/* contact section */
+#contact ul {
+    line-height: 160%;
+    list-style-type: square;
+    margin: 2% 0
+}
+
+/* resume section */
+#resume {
+    display: flex;
+    justify-content: space-between;
+}
+#resume img {
+    border: 1px solid var(--slate);
+    margin-top: 2.5%;
+    max-height: 130px;
+}
+#resume ul {
+    line-height: 140%;
+    list-style-type: square;
+    margin: 2% 0;
 }
 
 /* footer */
