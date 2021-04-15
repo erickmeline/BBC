@@ -1,0 +1,23 @@
+{
+  "name": "BBC",
+  "version": "1.0.0",
+  "description": "Berkeley Boot Camp Working Directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickmeline/BBC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erickmeline/BBC/issues"
+  },
+  "homepage": "https://github.com/erickmeline/BBC#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
