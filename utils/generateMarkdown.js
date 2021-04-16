@@ -36,9 +36,7 @@ function renderLicenseLink(license) {
 
 function renderLicenseSection(license) {
   return license ?
-  `## License\n\nLicensed under ${license}, (the "License");\n
-  You may obtain a copy of the License at:\n
-  ${renderLicenseLink(license)}\n`
+  `## License\nLicensed under ${license}, (the "License");\nYou may obtain a copy of the License at:\n${renderLicenseLink(license)}\n`
   : '';
 }
 
