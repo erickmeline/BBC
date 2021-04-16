@@ -40,13 +40,6 @@ const questions = [
         name: 'instructions',
     },
     {
-        type: 'list',
-        message: 'What license modal covers this project?',
-        name: 'license',
-        choices: ['None', 'Apache 2.0 License', 'The MIT License', 'Mozilla Public License 2.0', 'Unlicense'],
-        default: ['None']
-    },
-    {
         type: 'input',
         message: 'Contribution guidelines?',
         name: 'contribution',
@@ -55,6 +48,13 @@ const questions = [
         type: 'input',
         message: 'Test instructions?',
         name: 'tests',
+    },
+    {
+        type: 'list',
+        message: 'What license modal covers this project?',
+        name: 'license',
+        choices: ['None', 'Apache 2.0 License', 'The MIT License', 'Mozilla Public License 2.0', 'Unlicense'],
+        default: ['None']
     }
 ];
 

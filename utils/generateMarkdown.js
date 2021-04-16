@@ -4,16 +4,16 @@
 function renderLicenseBadge(license) {
   switch(license) {
     case 'Apache 2.0 License':
-      return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]\n';
+      return '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)\n';
       break;
     case 'The MIT License':
-      return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n';
+      return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)\n';
       break;
     case 'Mozilla Public License 2.0':
-      return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]\n';
+      return '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)\n';
       break;
     case 'Unlicense':
-      return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]\n';
+      return '![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)\n';
       break;
     default: return '';
   }
@@ -24,16 +24,16 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch(license) {
     case 'Apache 2.0 License':
-      return '(https://opensource.org/licenses/Apache-2.0)';
+      return 'https://opensource.org/licenses/Apache-2.0';
       break;
     case 'The MIT License':
-      return '(https://opensource.org/licenses/MIT)';
+      return 'https://opensource.org/licenses/MIT';
       break;
     case 'Mozilla Public License 2.0':
-      return '(https://opensource.org/licenses/MPL-2.0)';
+      return 'https://opensource.org/licenses/MPL-2.0';
       break;
     case 'Unlicense':
-      return '(http://unlicense.org/)';
+      return 'http://unlicense.org/';
       break;
     default: return '';
   }
@@ -43,7 +43,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   return license ?
-  `Licensed under ${license}, (the "License");
+  `## License\n\nLicensed under ${license}, (the "License");
   You may obtain a copy of the License at:
   ${renderLicenseLink(license)}\n`
   : '';
@@ -52,52 +52,58 @@ function renderLicenseSection(license) {
 const generateToc = (data) => {
   let toc = '';
   if (data.installation) {
-    toc += '- [Installation instructions](#Installation-instructions)';
+    toc += '- [Installation instructions](#Installation-instructions)\n';
   }
   if (data.instructions) {
-    toc += '- [Usage information](#Usage-information)';
+    toc += '- [Usage information](#Usage-information)\n';
   }
   if (data.contribution) {
-    toc += '- [Contribution guidelines](#Contribution-guidelines)';
+    toc += '- [Contribution guidelines](#Contribution-guidelines)\n';
   }
   if (data.tests) {
-    toc += '- [Test instructions](#Test-instructions)';
+    toc += '- [Test instructions](#Test-instructions)\n';
   }
   if (data.github || data.email) {
-    toc += '- [Questions](#Questions)';
+    toc += '- [Questions](#Questions)\n';
   }
-  return `${toc}\n`;
+  return `## Table of contents\n\n${toc}\n\n`;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   let readme = '';
   if (data.title) {
-    readme += `# ${data.title}\n`;
-  }
-  if (data.description) {
-    readme += `${data.description}\n`;
+    readme += `# ${data.title}\n\n\n`;
   }
   readme += renderLicenseBadge(data.license);
+  if (data.description) {
+    readme += `## Description\n\n${data.description}\n\n\n\n`;
+  }
   readme += generateToc(data);
   if (data.installation) {
-    readme += `${data.installation}\n`;
+    readme += `## Installation instructions\n\n${data.installation}\n\n\n\n`;
   }
   if (data.instructions) {
-    readme += `${data.instructions}\n`;
+    readme += `## Installation instructions\n\n${data.instructions}\n\n\n\n`;
+  }
+  if (data.information) {
+    readme += `## Usage information\n\n${data.information}\n\n\n\n`;
   }
   if (data.contribution) {
-    readme += `${data.contribution}\n`;
+    readme += `## Contribution guidelines\n\n${data.contribution}\n\n\n\n`;
   }
   if (data.tests) {
-    readme += `${data.tests}\n`;
+    readme += `## Test instructions\n\n${data.tests}\n\n\n\n`;
   }
   if (data.github || data.email) {
-    readme += `${data.github}\n`;
-    readme += `${data.github}\n`;
-  }
-  if (data.tests) {
-    readme += `${data.tests}\n`;
+    readme += '## Questions\n\n';
+    readme += 'reach out with additional questions:\n\n';
+    readme += `[${data.github}](${data.github})`;
+    if (data.github && data.email) {
+      readme += ' - ';
+    }
+    readme += `[${data.email}](mailto://${data.email})`;
+    readme += '\n\n\n\n';
   }
   readme += renderLicenseSection(data.license);
   // console.log('readme',readme);
