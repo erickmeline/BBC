@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
     case 'Unlicense':
       return '![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)\n\n';
       break;
-    default: return '\n\n';
+    default: return '\n';
   }
 }
 
@@ -35,8 +35,9 @@ function renderLicenseLink(license) {
 }
 
 function renderLicenseSection(license) {
-  return license ?
-  `## License\nLicensed under ${license}, (the "License");\nYou may obtain a copy of the License at:\n${renderLicenseLink(license)}\n`
+  return license !== 'None' ?
+  `## License\nLicensed under ${license}, (the "License");
+You may obtain a copy of the License at:\n${renderLicenseLink(license)}\n`
   : '';
 }
 
@@ -57,7 +58,7 @@ const generateToc = (data) => {
   if (data.github || data.email) {
     toc += '- [Questions](#Questions)\n';
   }
-  return `## Table of contents\n${toc}\n\n`;
+  return toc = toc ? `## Table of contents\n${toc}\n` : '';
 }
 
 function generateMarkdown(data) {
@@ -87,7 +88,7 @@ function generateMarkdown(data) {
   }
   if (data.github || data.email) {
     readme += '## Questions\n';
-    readme += 'reach out with additional questions:\n';
+    readme += 'Reach out with additional questions:\n';
     readme += `[${data.github}](${data.github})`;
     if (data.github && data.email) {
       readme += ' - ';
