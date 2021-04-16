@@ -1,26 +1,21 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-//['None', 'Apache 2.0 License', 'The MIT License', 'Mozilla Public License 2.0', 'Unlicense']
 function renderLicenseBadge(license) {
   switch(license) {
     case 'Apache 2.0 License':
-      return '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)\n';
+      return '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)\n\n';
       break;
     case 'The MIT License':
-      return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)\n';
+      return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)\n\n';
       break;
     case 'Mozilla Public License 2.0':
-      return '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)\n';
+      return '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)\n\n';
       break;
     case 'Unlicense':
-      return '![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)\n';
+      return '![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)\n\n';
       break;
-    default: return '';
+    default: return '\n\n';
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {
   switch(license) {
     case 'Apache 2.0 License':
@@ -39,12 +34,10 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
   return license ?
-  `## License\n\nLicensed under ${license}, (the "License");
-  You may obtain a copy of the License at:
+  `## License\n\nLicensed under ${license}, (the "License");\n
+  You may obtain a copy of the License at:\n
   ${renderLicenseLink(license)}\n`
   : '';
 }
@@ -69,7 +62,6 @@ const generateToc = (data) => {
   return `## Table of contents\n${toc}\n\n`;
 }
 
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   let readme = '';
   if (data.title) {
