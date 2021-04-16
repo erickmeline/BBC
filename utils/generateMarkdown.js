@@ -88,7 +88,7 @@ function generateMarkdown(data) {
   }
   if (data.github || data.email) {
     readme += '## Questions\n';
-    readme += 'Reach out with additional questions:\n';
+    readme += 'Reach out with additional questions:\n\n';
     readme += `[${data.github}](${data.github})`;
     if (data.github && data.email) {
       readme += ' - ';
