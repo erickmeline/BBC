@@ -49,20 +49,58 @@ function renderLicenseSection(license) {
   : '';
 }
 
+const generateToc = (data) => {
+  let toc = '';
+  if (data.installation) {
+    toc += '- Installation instructions';
+  }
+  if (data.instructions) {
+    toc += '- Usage information';
+  }
+  if (data.contribution) {
+    toc += '- Contribution guidelines';
+  }
+  if (data.tests) {
+    toc += '- Test instructions';
+  }
+  if (data.github || data.email) {
+    toc += '- Questions';
+  }
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-  ${renderLicenseBadge(data.license)}
-  ${data.description}
-  ${data.toc}
-  ${data.installation}
-  ${data.instructions}
-
-  ${data.contribution}
-  ${data.github}${data.email}
-  ${data.tests}
-  ${renderLicenseSection(data.license)}
-`;
+  const toc = generateToc(data);
+  let readme = '';
+  if (data.title) {
+    readme += `# ${data.title}`;
+  }
+  if (data.description) {
+    readme += `${data.description}`;
+  }
+  readme += renderLicenseBadge(data.license);
+  readme += generateToc(data);
+  if (data.installation) {
+    readme += `${data.installation}`;
+  }
+  if (data.instructions) {
+    readme += `${data.instructions}`;
+  }
+  if (data.contribution) {
+    readme += `${data.contribution}`;
+  }
+  if (data.tests) {
+    readme += `${data.tests}`;
+  }
+  if (data.github || data.email) {
+    readme += `${data.github}`;
+    readme += `${data.github}`;
+  }
+  if (data.tests) {
+    readme += `${data.tests}`;
+  }
+  readme += renderLicenseSection(license);
+  return readme;
 }
 
 module.exports = generateMarkdown;
