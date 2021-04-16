@@ -73,11 +73,11 @@ const generateToc = (data) => {
 function generateMarkdown(data) {
   let readme = '';
   if (data.title) {
-    readme += `# ${data.title}\n\n\n`;
+    readme += `# ${data.title}\n`;
   }
   readme += renderLicenseBadge(data.license);
   if (data.description) {
-    readme += `## Description\n\n${data.description}\n\n\n\n`;
+    readme += `## Description\n\n${data.description}\n\n\n`;
   }
   readme += generateToc(data);
   if (data.installation) {
@@ -97,7 +97,7 @@ function generateMarkdown(data) {
   }
   if (data.github || data.email) {
     readme += '## Questions\n\n';
-    readme += 'reach out with additional questions:\n\n';
+    readme += 'reach out with additional questions:\n';
     readme += `[${data.github}](${data.github})`;
     if (data.github && data.email) {
       readme += ' - ';
