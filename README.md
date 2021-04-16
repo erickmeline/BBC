@@ -7,7 +7,7 @@ Node cli readme generator
 ![screen shot](./assets/images/screenshot.png)
 
 ## Video Walkthrough
-[video](./assets/video.mp4)
+[video](https://youtu.be/TkdjWBhXukk)
 
 ## Table of contents
 - [Installation instructions](#Installation-instructions)
