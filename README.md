@@ -3,6 +3,9 @@
 ## Description
 Node cli readme generator
 
+## Screenshot
+![screen shot](./assets/images/screenshot.png)
+
 ## Table of contents
 - [Installation instructions](#Installation-instructions)
 - [Usage information](#Usage-information)
