@@ -1,12 +1,9 @@
 # some title
-![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## Description
-
-some description
-
+some decription
 
 ## Table of contents
-
 - [Installation instructions](#Installation-instructions)
 - [Usage information](#Usage-information)
 - [Contribution guidelines](#Contribution-guidelines)
@@ -15,38 +12,23 @@ some description
 
 
 ## Installation instructions
-
 some installation
 
-
-
 ## Installation instructions
-
-some useage
-
-
+some usage
 
 ## Contribution guidelines
-
-some contribution
-
-
+some contributions
 
 ## Test instructions
-
 some tests
 
-
-
 ## Questions
-
 reach out with additional questions:
-[emeline](emeline) - [erick@erick](mailto://erick@erick)
-
-
+[emeline](emeline) - [erick@](mailto://erick@)
 
 ## License
 
-Licensed under Unlicense, (the "License");
+Licensed under The MIT License, (the "License");
   You may obtain a copy of the License at:
-  http://unlicense.org/
+  https://opensource.org/licenses/MIT

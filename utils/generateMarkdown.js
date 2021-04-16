@@ -66,7 +66,7 @@ const generateToc = (data) => {
   if (data.github || data.email) {
     toc += '- [Questions](#Questions)\n';
   }
-  return `## Table of contents\n\n${toc}\n\n`;
+  return `## Table of contents\n${toc}\n\n`;
 }
 
 // TODO: Create a function to generate markdown for README
@@ -77,36 +77,35 @@ function generateMarkdown(data) {
   }
   readme += renderLicenseBadge(data.license);
   if (data.description) {
-    readme += `## Description\n\n${data.description}\n\n\n`;
+    readme += `## Description\n${data.description}\n\n`;
   }
   readme += generateToc(data);
   if (data.installation) {
-    readme += `## Installation instructions\n\n${data.installation}\n\n\n\n`;
+    readme += `## Installation instructions\n${data.installation}\n\n`;
   }
   if (data.instructions) {
-    readme += `## Installation instructions\n\n${data.instructions}\n\n\n\n`;
+    readme += `## Installation instructions\n${data.instructions}\n\n`;
   }
   if (data.information) {
-    readme += `## Usage information\n\n${data.information}\n\n\n\n`;
+    readme += `## Usage information\n${data.information}\n\n`;
   }
   if (data.contribution) {
-    readme += `## Contribution guidelines\n\n${data.contribution}\n\n\n\n`;
+    readme += `## Contribution guidelines\n${data.contribution}\n\n`;
   }
   if (data.tests) {
-    readme += `## Test instructions\n\n${data.tests}\n\n\n\n`;
+    readme += `## Test instructions\n${data.tests}\n\n`;
   }
   if (data.github || data.email) {
-    readme += '## Questions\n\n';
+    readme += '## Questions\n';
     readme += 'reach out with additional questions:\n';
     readme += `[${data.github}](${data.github})`;
     if (data.github && data.email) {
       readme += ' - ';
     }
     readme += `[${data.email}](mailto://${data.email})`;
-    readme += '\n\n\n\n';
+    readme += '\n\n';
   }
   readme += renderLicenseSection(data.license);
-  // console.log('readme',readme);
   return readme;
 }
 
